@@ -11,21 +11,25 @@ from mitmproxy import ctx, http
 
 class Joker:
     def request(self, flow: mitmproxy.http.HTTPFlow):
+
         # if flow.request.host == "www.damiwangxiao.com":
         #     flow.response = http.HTTPResponse.make(404)
-        if flow.request.host != "www.baidu.com" or not flow.request.path.startswith("/s"):
-            return
+        print('请求状态码：'+flow.get_state())
 
-        if "wd" not in flow.request.query.keys():
-            ctx.log.warn("can not get search word from %s" % flow.request.pretty_url)
-            return
-
-        ctx.log.info("catch search word: %s" % flow.request.query.get("wd"))
-        flow.request.query.set_all("wd", ["哈哈哈哈"])
+        # if flow.request.host != "www.baidu.com" or not flow.request.path.startswith("/s"):
+        #     return
+        #
+        # if "wd" not in flow.request.query.keys():
+        #     ctx.log.warn("can not get search word from %s" % flow.request.pretty_url)
+        #     return
+        #
+        # ctx.log.info("catch search word: %s" % flow.request.query.get("wd"))
+        # flow.request.query.set_all("wd", ["哈哈哈哈"])
 
     def response(self, flow: mitmproxy.http.HTTPFlow):
-        if flow.request.host == "www.damiwangxiao.com":
-            flow.response = http.HTTPResponse.make(404)
+        print('返回状态码：'+flow.get_state())
+        # if flow.request.host == "www.damiwangxiao.com":
+        #     flow.response = http.HTTPResponse.make(404)
 
 
             # text = flow.response.get_text()

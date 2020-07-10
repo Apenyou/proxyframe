@@ -9,6 +9,6 @@ import counter
 import joker
 
 addons = [
-    counter.Counter(),
-    joker.Joker(),
+    # counter.Counter(),
+    joker.Joker()
 ]

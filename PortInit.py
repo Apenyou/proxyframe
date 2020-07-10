@@ -19,7 +19,8 @@ def mitmproxy_init():
     if err != 0:
         return True
     else:
-        PID = str(PID_rcmd).split(' ')[-19]
+        PID = str(PID_rcmd).split(' ')[-20]
+        print(PID)
         cmd('kill -9 {0}'.format(PID))
         # os.kill(PID)
         return True
@@ -31,6 +32,6 @@ def mitmproxy_start():
 
 
 if __name__ == '__main__':
-    # mitmproxy_init()
-    mitmproxy_start()
+    mitmproxy_init()
+    # mitmproxy_start()
     print(pid)

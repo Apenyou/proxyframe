@@ -7,15 +7,17 @@
 
 import mitmproxy.http
 from mitmproxy import ctx, http
+import os
 
 
 class Joker:
     def request(self, flow: mitmproxy.http.HTTPFlow):
 
-        # if flow.request.host == "www.damiwangxiao.com":
-        #     flow.response = http.HTTPResponse.make(404)
-        print('请求状态码：'+flow.get_state())
-
+        if flow.request.host == "www.damiwangxiao.com":
+            flow.response = http.HTTPResponse.make(404)
+        # print('请求状态码：'+flow.get_state())
+        if flow.request.host == 'www.baidu.com':
+            os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")
         # if flow.request.host != "www.baidu.com" or not flow.request.path.startswith("/s"):
         #     return
         #
@@ -27,8 +29,12 @@ class Joker:
         # flow.request.query.set_all("wd", ["哈哈哈哈"])
 
     def response(self, flow: mitmproxy.http.HTTPFlow):
-        print('返回状态码：'+flow.get_state())
-        # if flow.request.host == "www.damiwangxiao.com":
+        pass
+
+        # print('返回状态码：'+flow.get_state())
+        # os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")
+
+    # if flow.request.host == "www.damiwangxiao.com":
         #     flow.response = http.HTTPResponse.make(404)
 
 

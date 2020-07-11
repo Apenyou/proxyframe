@@ -4,7 +4,7 @@ import configparser
 class configurationData():
     def __init__(self):
         config = configparser.ConfigParser()
-        config.read('config.ini')
+        config.read('config.ini',encoding='gbk')
         self.config = config
 
     def dataModification(self, section, option, value):

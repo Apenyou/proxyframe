@@ -50,6 +50,6 @@ class BasicAbility():
 
 if __name__ == '__main__':
     inittest = BasicAbility()
-    inittest.mitmproxy_init()
-    # inittest.mitmproxy_start()
+    # inittest.mitmproxy_init()
+    inittest.mitmproxy_start()
 

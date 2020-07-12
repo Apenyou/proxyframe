@@ -17,7 +17,16 @@ class Joker:
             flow.response = http.HTTPResponse.make(404)
         # print('请求状态码：'+flow.get_state())
         if flow.request.host == 'www.baidu.com':
-            os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")
+            import tinyWinToast.tinyWinToast
+            toast = tinyWinToast.tinyWinToast.Toast()
+            toast.setHeroImage("F:\codeprivate\proxyframe\qqq.png")
+            toast.setImage("F:\codeprivate\proxyframe\qqq.png")
+            toast.setTitle("测试标题", maxLines=1)
+            toast.setMessage("哈哈哈哈哈哈哈E", maxLines=1)
+            toast.addText("MORE TEXT", maxLines=1)
+            toast.setIcon('F:\codeprivate\proxyframe\qqq.png')
+            toast.show()
+            # os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")
         # if flow.request.host != "www.baidu.com" or not flow.request.path.startswith("/s"):
         #     return
         #

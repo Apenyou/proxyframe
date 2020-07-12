@@ -46,5 +46,19 @@ def main():
         print("打开代理")
 
 if __name__ == '__main__':
-    # main()
-    proxyswitch(True)
+    main()
+    # proxyswitch(False)
+
+# mac OS 代理控制
+# proxy = "proxy.example.com"
+# port = 8080
+
+# def Proxy_on():
+#     os.system('networksetup -setwebproxy Ethernet '+proxy+' '+port)
+#
+# Proxy_on()
+#
+# def Proxy_off():
+#     os.system('networksetup -setwebproxystate Ethernet off')
+#
+# Proxy_off()

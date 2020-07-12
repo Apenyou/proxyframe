@@ -8,6 +8,8 @@
 import mitmproxy.http
 from mitmproxy import ctx, http
 import os
+import tinyWinToast.tinyWinToast
+toast = tinyWinToast.tinyWinToast.Toast()
 
 
 class Joker:
@@ -17,15 +19,25 @@ class Joker:
             flow.response = http.HTTPResponse.make(404)
         # print('请求状态码：'+flow.get_state())
         if flow.request.host == 'www.baidu.com':
-            import tinyWinToast.tinyWinToast
-            toast = tinyWinToast.tinyWinToast.Toast()
-            toast.setHeroImage("F:\codeprivate\proxyframe\qqq.png")
-            toast.setImage("F:\codeprivate\proxyframe\qqq.png")
-            toast.setTitle("测试标题", maxLines=1)
-            toast.setMessage("哈哈哈哈哈哈哈E", maxLines=1)
-            toast.addText("MORE TEXT", maxLines=1)
-            toast.setIcon('F:\codeprivate\proxyframe\qqq.png')
-            toast.show()
+            pass
+            # print('开始+++++++++++++++++'
+            #       '+++++++++++++++++'
+            #       '+++++++++++++++++'
+            #       '++++++++++++++++++'
+            #       '++++++++++++++++++')
+            # print(flow)
+            # print('结束+++++++++++++++++'
+            #       '+++++++++++++++++'
+            #       '+++++++++++++++++'
+            #       '++++++++++++++++++'
+            #       '++++++++++++++++++')
+            # toast.setHeroImage("F:\codeprivate\proxyframe\qqq.png")
+            # toast.setImage("F:\codeprivate\proxyframe\qqq.png")
+            # toast.setTitle(flow.request.host, maxLines=1)
+            # toast.setMessage(mitmproxy.http.HTTPRequest, maxLines=1)
+            # # toast.addText("MORE TEXT", maxLines=1)
+            # toast.setIcon('F:\codeprivate\proxyframe\qqq.png')
+            # toast.show()
             # os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")
         # if flow.request.host != "www.baidu.com" or not flow.request.path.startswith("/s"):
         #     return
@@ -38,7 +50,27 @@ class Joker:
         # flow.request.query.set_all("wd", ["哈哈哈哈"])
 
     def response(self, flow: mitmproxy.http.HTTPFlow):
-        pass
+        print('开始=================================='
+              '=================================='
+              '=================================='
+              '===================================='
+              '====================================')
+        print(flow.response.status_code)
+        print('结束=================================='
+              '=================================='
+              '=================================='
+              '===================================='
+              '====================================')
+        # if flow.response.set_text == 'www.baidu.com':
+        # import tinyWinToast.tinyWinToast
+        # toast = tinyWinToast.tinyWinToast.Toast()
+        # toast.setHeroImage("F:\codeprivate\proxyframe\qqq.png")
+        # toast.setImage("F:\codeprivate\proxyframe\qqq.png")
+        # toast.setTitle("测试标题", maxLines=1)
+        # toast.setMessage(flow.response.status_code(), maxLines=1)
+        # toast.addText("MORE TEXT", maxLines=1)
+        # toast.setIcon('F:\codeprivate\proxyframe\qqq.png')
+        # toast.show()
 
         # print('返回状态码：'+flow.get_state())
         # os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")

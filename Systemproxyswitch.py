@@ -33,6 +33,10 @@ def GetProxyStatus():
     winreg.CloseKey(hKey)
     return retVal[0]==1
 
+def proxyswitch(TorF):
+    if TorF:SetProxy(1, '127.0.0.1:8888', '*.local')
+    else:SetProxy(0, '127.0.0.1:8888', '*.local')
+
 def main():
     if GetProxyStatus():
         SetProxy(0, '127.0.0.1:8888', '*.local')
@@ -42,4 +46,5 @@ def main():
         print("打开代理")
 
 if __name__ == '__main__':
-    main()
+    # main()
+    proxyswitch(True)

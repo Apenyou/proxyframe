@@ -15,43 +15,43 @@ def testdel(a):
 
 # testdel(6666)
 
+def Notification(style):
 
-print(sys.platform)
+    if style == 'news':
+        import tinyWinToast.tinyWinToast
+        toast = tinyWinToast.tinyWinToast.Toast()
+        toast.setHeroImage("F:\codeprivate\proxyframe\qqq.png")
+        toast.setImage("F:\codeprivate\proxyframe\qqq.png")
+        toast.setTitle("测试标题", maxLines=1)
+        toast.setMessage("哈哈哈哈哈哈哈E", maxLines=1)
+        toast.addText("MORE TEXT", maxLines=1)
+        toast.setIcon('F:\codeprivate\proxyframe\qqq.png')
+        toast.show()
+    if style == 'messagebox':
+        #提醒OK消息框
+        win32api.MessageBox(0, "这是一个测试提醒OK消息框", "提醒",win32con.MB_OK)
 
-import tinyWinToast.tinyWinToast
-toast = tinyWinToast.tinyWinToast.Toast()
-toast.setHeroImage("F:\codeprivate\proxyframe\qqq.png")
-toast.setImage("F:\codeprivate\proxyframe\qqq.png")
-toast.setTitle("测试标题", maxLines=1)
-toast.setMessage("哈哈哈哈哈哈哈E", maxLines=1)
-toast.addText("MORE TEXT", maxLines=1)
-toast.setIcon('F:\codeprivate\proxyframe\qqq.png')
-toast.show()
+        win32api.SendMessage( 123, 342)
+        #是否信息框
+        win32api.MessageBox(0, "这是一个测试是否信息框", "提醒",win32con.MB_YESNO)
 
-#提醒OK消息框
-win32api.MessageBox(0, "这是一个测试提醒OK消息框", "提醒",win32con.MB_OK)
+        ##说明信息框
+        win32api.MessageBox(0, "这是一个测试说明信息框", "提醒",win32con.MB_HELP)
 
-win32api.SendMessage( 123, 342)
-#是否信息框
-win32api.MessageBox(0, "这是一个测试是否信息框", "提醒",win32con.MB_YESNO)
+        ####警告信息框
+        win32api.MessageBox(0, "这是一个测试警告信息框", "提醒",win32con.MB_ICONWARNING)
 
-##说明信息框
-win32api.MessageBox(0, "这是一个测试说明信息框", "提醒",win32con.MB_HELP)
+        ##疑问信息框
+        win32api.MessageBox(0, "这是一个测试疑问信息框", "提醒",win32con.MB_ICONQUESTION)
 
-####警告信息框
-win32api.MessageBox(0, "这是一个测试警告信息框", "提醒",win32con.MB_ICONWARNING)
+        ##提示信息框
+        win32api.MessageBox(0, "这是一个测试提示信息框", "提醒",win32con.MB_ICONASTERISK)
 
-##疑问信息框
-win32api.MessageBox(0, "这是一个测试疑问信息框", "提醒",win32con.MB_ICONQUESTION)
+        ##确认信息框
+        win32api.MessageBox(0, "这是一个测试确认信息框", "提醒",win32con.MB_OKCANCEL)
 
-##提示信息框
-win32api.MessageBox(0, "这是一个测试提示信息框", "提醒",win32con.MB_ICONASTERISK)
+        ##重试信息框
+        win32api.MessageBox(0, "这是一个测试重试信息框", "提醒",win32con.MB_RETRYCANCEL)
 
-##确认信息框
-win32api.MessageBox(0, "这是一个测试确认信息框", "提醒",win32con.MB_OKCANCEL)
-
-##重试信息框
-win32api.MessageBox(0, "这是一个测试重试信息框", "提醒",win32con.MB_RETRYCANCEL)
-
-##是否取消信息框
-win32api.MessageBox(0, "这是一个测试是否取消信息框", "提醒",win32con.MB_YESNOCANCEL)
+        ##是否取消信息框
+        win32api.MessageBox(0, "这是一个测试是否取消信息框", "提醒",win32con.MB_YESNOCANCEL)

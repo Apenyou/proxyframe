@@ -83,6 +83,7 @@ def proxyswitch(TorF):
             for ethernet in getEthernet():
                 Proxy_off(ethernet)
 
+proxyswitch(False)
 # def main():
 #     if GetProxyStatus():
 #         SetProxy(0, '127.0.0.1:8888', '*.local')

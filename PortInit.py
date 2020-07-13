@@ -1,12 +1,12 @@
 import subprocess
 import os
-import configilb
+import configlib
 import sys
 
 class BasicAbility():
 
     def __int__(self):
-        configobj = configilb.configurationData()
+        configobj = configlib.configurationData()
         self.configobj = configobj
 
     def cmd(self, command, outime=None):
@@ -30,8 +30,8 @@ class BasicAbility():
             '''linux '''
             # PID_rcmd, err, pid = self.cmd('lsof -i tcp:8888',outime=0.5)
             # print(str(PID_rcmd).split(' ')[-19])
-            configobj = configilb.configurationData()
-            pid = configobj.configurationRead('mitmproxyPID', 'pid')
+            configobj = configlib.configurationData()
+            pid = configobj.configurationRead('mitmproxy', 'pid')
             os.kill(int(pid), 9)
 
 
@@ -43,7 +43,7 @@ class BasicAbility():
 
         if sys.platform == 'win32':
             return True
-        configobj = configilb.configurationData()
+        configobj = configlib.configurationData()
         configobj.dataModification('mitmproxyPID', 'pid', str(pid))
 
     '''Windows启动子进程后运行会再启动一个孙进程执行'''

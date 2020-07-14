@@ -8,6 +8,7 @@ proxyhost = config.configurationRead('mitmproxy', 'proxyhost')
 proxyport = config.configurationRead('mitmproxy', 'proxyport')
 ProxyOverride = config.configurationRead('mitmproxy', 'ProxyOverride')
 
+
 # mac OS 代理控制
 
 def Proxy_on(ethernet):
@@ -82,6 +83,7 @@ def proxyswitch(TorF):
         else:
             for ethernet in getEthernet():
                 Proxy_off(ethernet)
+
 
 proxyswitch(False)
 # def main():

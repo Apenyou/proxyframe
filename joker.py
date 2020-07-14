@@ -9,6 +9,7 @@ import mitmproxy.http
 from mitmproxy import ctx, http
 import os
 import tinyWinToast.tinyWinToast
+
 toast = tinyWinToast.tinyWinToast.Toast()
 
 
@@ -76,12 +77,11 @@ class Joker:
         # os.system("terminal-notifier -message 'Hello, this is my message' -title "+ flow.get_state() +"")
 
     # if flow.request.host == "www.damiwangxiao.com":
-        #     flow.response = http.HTTPResponse.make(404)
+    #     flow.response = http.HTTPResponse.make(404)
 
-
-            # text = flow.response.get_text()
-            # text = text.replace("登录", "这是线上环境")
-            # flow.response.set_text(text)
+    # text = flow.response.get_text()
+    # text = text.replace("登录", "这是线上环境")
+    # flow.response.set_text(text)
 
     def http_connect(self, flow: mitmproxy.http.HTTPFlow):
         if flow.request.host == "www.google.com":
